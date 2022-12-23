@@ -1,37 +1,21 @@
-package com.login.logindemo.entity;
+package com.login.logindemo.dto;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "user")
-public class User {
-    @Id
-    @Column(name = "user_id", length = 45)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class UserDto {
+  
     private int userid;
-
-    @Column(name = "user_name", length = 255)
     private String username;
-    @Column(name = "email", length = 255)
     private String email;
-    @Column(name = "phone", length = 20)
     private int phone;
-
-    public User(int userid, String username, String email, int phone) {
+    
+    public UserDto(int userid, String username, String email, int phone) {
         this.userid = userid;
         this.username = username;
         this.email = email;
         this.phone = phone;
     }
 
-    public User() {
-
+    public UserDto() {
     }
 
     public int getUserid() {
@@ -68,7 +52,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [userid=" + userid + ", username=" + username + ", email=" + email + ", phone=" + phone + "]";
+        return "UserDto [userid=" + userid + ", username=" + username + ", email=" + email + ", phone=" + phone + "]";
     }
+    
 
 }
